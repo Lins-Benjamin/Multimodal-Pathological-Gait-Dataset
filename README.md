@@ -34,13 +34,19 @@ We provide meaningful baseline results on the dataset, which we make public as a
 5. **Trendelenburg Gait**
 6. **Foot Drop**
 
-### Sensor Modalities
-| Modality | Device Type | Data Recorded |
-| :--- | :--- | :--- |
-| **Smartphone IMU** | Consumer Smartphone | Accelerometer & Gyroscope streams |
-| **Smartwatch IMU** | Consumer Smartwatch | Wrist motion / Accelerometer data |
-| **Acoustic Signals** | Standard Microphone | Audio recordings of footfall step sounds |
-| **Markerless Video** | RGB Camera | Extracted body pose landmarks / coordinates |
+### Recorded Data
+
+An initial total of 430 recordings were collected. Following data cleaning and anonymization, a final total of 407 recordings were retained for further processing. Each recording comprises up to five core files, detailed below:
+
+1. `metadata.json` – Stores the recording ID and the respective gait pattern class.
+2. `pose.json` – Contains pose landmark data derived from MediaPipe, recorded at approx. 25 Hz.
+3. `phone.json` – Contains the body-worn smartphone's acceleration, gyroscope, and orientation data, recorded at approx. 60 Hz.
+4. `watch.json` – Contains the body-worn smartwatch's acceleration and gyroscope data, recorded at approx. 25 Hz.
+5. `audio.m4a` – Contains acoustic data on step sounds and arm movements from the smartwatch (included where privacy constraints permit).
+
+Optionally, a visualization video for each recording can be generated via a provided Python script. 
+
+In addition, a file was created that uniquely assigns each recording to a person, enabling person-dependent data splitting for model training in the next step.
 
 ---
 
@@ -54,6 +60,23 @@ We provide meaningful baseline results on the dataset, which we make public as a
 ---
 
 ## Data Structure
-
 ```text
-├── data/
+dataset/
+├── Location_1/
+│   ├── Person_to_Data.json  # Maps multiple recording IDs within Location_1 to participants
+│   ├── 0/                          
+│   │   ├── meta_data.json           # Recording metadata and gait class
+│   │   ├── pose_landmarks.json      # MediaPipe pose landmarks (~25 Hz)
+│   │   ├── phone.json               # Smartphone IMU and orientation data (~60 Hz)
+│   │   ├── watch.json               # Smartwatch IMU data (~25 Hz)
+│   │   ├── audio.m4a                # Smartwatch audio recording (where available)
+│   │   └── video.mp4                # Video recording (optional / generated via script)
+│   ├── 1/
+│   ├── 2/
+│   └── ...
+├── Location_2/
+│   ├── Person_to_Data.json  # Maps multiple recording IDs within Location_2 to participants
+│   └── ...
+└── Location_3/
+    ├── Person_to_Data.json  # Maps multiple recording IDs within Location_3 to participants
+    └── ...
