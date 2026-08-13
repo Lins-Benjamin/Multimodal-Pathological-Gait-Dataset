@@ -48,6 +48,8 @@ Optionally, a visualization video for each recording can be generated via a prov
 
 In addition, a file was created that uniquely assigns each recording to a person, enabling person-dependent data splitting for model training in the next step.
 
+![Visualisation](demo.gif)
+
 ---
 
 ## Benchmark Baseline Results
