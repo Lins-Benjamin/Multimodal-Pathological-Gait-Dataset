@@ -24,7 +24,7 @@ We evaluated both unimodal and multimodal approaches and performed late fusion v
 We provide meaningful baseline results on the dataset, which we make public as a robust reference for future comparisons and methodological developments.
 
 ---
-<img width="2117" height="1074" alt="setup" src="https://github.com/user-attachments/assets/f3ade6b9-02fe-49de-9149-c449f5c6423d" />
+![Visualisation](setup.png)
 
 ## Dataset Overview
 
