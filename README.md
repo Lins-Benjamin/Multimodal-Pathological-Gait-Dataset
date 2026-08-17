@@ -17,12 +17,14 @@ In cooperation with **three physiotherapy training centers**, we collected recor
 * Smartwatch inertial sensor data
 * Acoustic step signals
 * Markerless pose estimates extracted from video
+The trainees are supposed to simulate the targeted gait classes as authentically as possible.
 
 We evaluated both unimodal and multimodal approaches and performed late fusion via majority voting. Unimodal classification achieved accuracies up to **77%** (with pose landmark data yielding the best performance), while combining multiple modalities increased overall accuracy to **89.4%**. 
 
 We provide meaningful baseline results on the dataset, which we make public as a robust reference for future comparisons and methodological developments.
 
 ---
+<img width="2117" height="1074" alt="setup" src="https://github.com/user-attachments/assets/f3ade6b9-02fe-49de-9149-c449f5c6423d" />
 
 ## Dataset Overview
 
